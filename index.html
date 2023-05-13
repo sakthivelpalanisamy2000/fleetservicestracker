@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Fleet Services Tracker</title>
+
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- App CSS -->
+	<link rel="stylesheet" href="assets/css/portal.css">
+	<link rel="stylesheet" href="assets/css/resposive.css">
+	<link rel="stylesheet" href="assets/css/Header.css">
+
+</head>
+
+<body class="app">
+	<header class="app-header fixed-top ">
+		<div class="app-header-inner  ">
+			<div class="container-fluid py-2">
+				<div class="app-header-content">
+					<div class="row justify-content-between align-items-center">
+						
+
+						<div class="col-auto">
+							
+							
+							<a id="sidepanel-toggler" class="sidepanel-toggler d-inline-block d-xl-none" href="#">
+								<svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M23.5 2.66667C23.7761 2.66667 24 2.44281 24 2.16667V0.5C24 0.223858 23.7761 0 23.5 0L0.5 1.66893e-06C0.223858 1.66893e-06 0 0.223859 0 0.500001L1.78814e-07 2.16667C2.38419e-07 2.44281 0.223858 2.66667 0.5 2.66667L23.5 2.66667ZM24 8.83333C24 9.10948 23.7761 9.33333 23.5 9.33333L0.5 9.33334C0.223858 9.33334 2.38419e-07 9.10948 1.78814e-07 8.83334L0 7.16667C0 6.89053 0.223858 6.66667 0.5 6.66667L23.5 6.66667C23.7761 6.66667 24 6.89052 24 7.16667V8.83333ZM24 15.5C24 15.7761 23.7761 16 23.5 16L0.5 16C0.223858 16 2.38419e-07 15.7761 1.78814e-07 15.5L0 13.8333C0 13.5572 0.223858 13.3333 0.5 13.3333L23.5 13.3333C23.7761 13.3333 24 13.5572 24 13.8333V15.5Z" fill="#404040"/>
+									</svg>
+									
+								<!-- <p>Fill Status</p> -->
+								<img  style="padding-left: 20px;" src="./assets/images/logo/logo.svg"/>
+								<!-- <div class="hidenmobile"><h6 >Fill Status</h6></div> -->
+									
+							</a>
+						</div><!--//col-->
+						
+
+						<div class="app-utilities col-auto">
+							<div class="app-utility-item app-notifications-dropdown dropdown hidden">
+								<a class="dropdown-toggle no-toggle-arrow" id="notifications-dropdown-toggle"
+									data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"
+									title="Notifications">
+									<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+											<svg width="50" height="21" viewBox="0 0 50 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="24" y="3" width="26" height="16" rx="8" fill="#0097BB"/>
+								<path d="M30.8647 15H35.8813V14.1299H32.2075V14.0439L33.9692 12.2231C35.3711 10.7783 35.7524 10.1338 35.7524 9.24756V9.23682C35.7524 7.98535 34.7158 7.06689 33.3623 7.06689C31.8799 7.06689 30.8164 8.05518 30.811 9.43018L30.8218 9.43555L31.7456 9.44092L31.751 9.43018C31.751 8.51709 32.3687 7.91016 33.2979 7.91016C34.2109 7.91016 34.7642 8.52246 34.7642 9.33887V9.34961C34.7642 10.0264 34.4741 10.4292 33.4858 11.498L30.8647 14.334V15ZM40.1406 15.1289C41.6929 15.1289 42.8315 14.1729 42.8315 12.8784V12.8677C42.8315 11.7666 42.0635 11.063 40.9355 10.9663V10.9448C41.9023 10.7407 42.5791 10.0854 42.5791 9.12939V9.11865C42.5791 7.94238 41.6069 7.12061 40.1299 7.12061C38.6797 7.12061 37.6807 7.96387 37.5571 9.22607L37.5518 9.27979H38.481L38.4863 9.22607C38.5669 8.44189 39.2168 7.9585 40.1299 7.9585C41.0752 7.9585 41.6069 8.42578 41.6069 9.23682V9.24756C41.6069 10.021 40.9624 10.5903 40.0386 10.5903H39.1094V11.4067H40.0815C41.1665 11.4067 41.8486 11.9385 41.8486 12.8892V12.8999C41.8486 13.7217 41.1558 14.291 40.1406 14.291C39.1094 14.291 38.4058 13.7646 38.3306 13.002L38.3252 12.9482H37.396L37.4014 13.0127C37.5034 14.2373 38.54 15.1289 40.1406 15.1289Z" fill="white"/>
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M14.2993 9.71913C14.2993 7.34874 13.6123 4.52979 11.127 3.17891C10.7896 1.7419 9.52331 0.673828 8.01278 0.673828C6.50228 0.673828 5.23604 1.74185 4.89854 3.17881C2.41313 4.52965 1.72609 7.34865 1.72609 9.71913V11.4966L0.776819 12.4661C0.28756 12.9658 0.0126953 13.6435 0.0126953 14.3501C0.0126953 15.8216 1.18073 17.0146 2.62158 17.0146H4.47213C4.59839 17.7539 4.94472 18.4416 5.47139 18.9795C6.14541 19.6678 7.05959 20.0546 8.0128 20.0546C8.96602 20.0546 9.88019 19.6678 10.5542 18.9795C11.0809 18.4416 11.4272 17.7539 11.5535 17.0146H13.4038C14.8447 17.0146 16.0127 15.8216 16.0127 14.3501C16.0127 13.6435 15.7378 12.9658 15.2486 12.4661L14.2993 11.4966V9.71913ZM9.47909 17.0146H6.54652C6.62563 17.2064 6.74086 17.3828 6.8878 17.5329C7.18617 17.8376 7.59084 18.0088 8.0128 18.0088C8.43476 18.0088 8.83944 17.8376 9.13781 17.5329C9.28475 17.3828 9.39997 17.2064 9.47909 17.0146ZM3.7292 11.9203C3.7292 12.1916 3.62368 12.4517 3.43585 12.6436L2.19323 13.9126C2.07962 14.0287 2.0158 14.186 2.0158 14.3501C2.0158 14.6918 2.28701 14.9688 2.62158 14.9688H13.4038C13.7384 14.9688 14.0096 14.6918 14.0096 14.3501C14.0096 14.186 13.9458 14.0287 13.8322 13.9126L12.5895 12.6436C12.4017 12.4517 12.2962 12.1916 12.2962 11.9203V9.71913C12.2962 7.38575 11.5655 5.40794 9.59216 4.72473C9.3727 4.64875 9.21216 4.44623 9.21216 4.20957V3.94451C9.21216 3.268 8.67518 2.71959 8.01278 2.71959C7.35038 2.71959 6.8134 3.268 6.8134 3.94451V4.20952C6.8134 4.44618 6.65284 4.6487 6.43338 4.72468C4.45995 5.40784 3.7292 7.3857 3.7292 9.71913V11.9203Z" fill="#404040"/>
+								</svg>
+
+									<!-- <span class="icon-badge">23</span> -->
+								</a><!--//dropdown-toggle-->
+
+							</div><!--//app-utility-item-->
+							
+
+							
+						</div><!--//app-utilities-->
+					</div><!--//row-->
+				</div><!--//app-header-content-->
+			</div><!--//container-fluid-->
+		</div><!--//app-header-inner-->
+		<div id="app-sidepanel" class="app-sidepanel">
+			<div id="sidepanel-drop" class="sidepanel-drop"></div>
+			<div class="sidepanel-inner d-flex flex-column">
+				<a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
+				<div class="app-branding">
+					<a class="app-logo" href="index.html"><span class="logo-text"> <img src="./assets/images/logo/logo.svg" /></span></a>
+
+				</div><!--//app-branding-->
+
+				<nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1">
+					<ul class="app-menu list-unstyled accordion" id="menu-accordion">
+
+						<li class="nav-item has-submenu">
+							<a class="nav-link submenu-toggle " href="#" data-bs-toggle="collapse"
+								data-bs-target="#submenu-1" aria-expanded="false" aria-controls="submenu-1">
+								<span class="nav-icon">
+									<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M2.16667 2.16667H5.5V5.5H2.16667V2.16667ZM0.5 2.16667C0.5 1.24619 1.24619 0.5 2.16667 0.5H5.5C6.42047 0.5 7.16667 1.24619 7.16667 2.16667V5.5C7.16667 6.42047 6.42047 7.16667 5.5 7.16667H2.16667C1.24619 7.16667 0.5 6.42047 0.5 5.5V2.16667ZM10.5 2.16667H13.8333V5.5H10.5V2.16667ZM8.83333 2.16667C8.83333 1.24619 9.57952 0.5 10.5 0.5H13.8333C14.7538 0.5 15.5 1.24619 15.5 2.16667V5.5C15.5 6.42047 14.7538 7.16667 13.8333 7.16667H10.5C9.57952 7.16667 8.83333 6.42047 8.83333 5.5V2.16667ZM13.8333 10.5H10.5V13.8333H13.8333V10.5ZM10.5 8.83333C9.57952 8.83333 8.83333 9.57952 8.83333 10.5V13.8333C8.83333 14.7538 9.57952 15.5 10.5 15.5H13.8333C14.7538 15.5 15.5 14.7538 15.5 13.8333V10.5C15.5 9.57952 14.7538 8.83333 13.8333 8.83333H10.5ZM2.16667 10.5H5.5V13.8333H2.16667V10.5ZM0.5 10.5C0.5 9.57952 1.24619 8.83333 2.16667 8.83333H5.5C6.42047 8.83333 7.16667 9.57952 7.16667 10.5V13.8333C7.16667 14.7538 6.42047 15.5 5.5 15.5H2.16667C1.24619 15.5 0.5 14.7538 0.5 13.8333V10.5Z" fill="#404040"/>
+										</svg>
+										
+								</span>
+								<span class="nav-link-text">Manage</span>
+								<span class="submenu-arrow">
+									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.880956 0.635711C1.04355 0.473118 1.30712 0.472974 1.46989 0.63539L5.00026 4.15807L8.53063 0.635389C8.69341 0.472974 8.95698 0.473118 9.11957 0.635711L9.70564 1.22178C9.86835 1.38449 9.86835 1.64831 9.70563 1.81103L5.29489 6.22178C5.13217 6.38449 4.86835 6.38449 4.70564 6.22178L0.29489 1.81103C0.132172 1.64831 0.132172 1.38449 0.29489 1.22178L0.880956 0.635711Z" fill="#404040"/>
+										</svg>
+								</span><!--//submenu-arrow-->
+							</a><!--//nav-link-->
+							<div id="submenu-1" class="collapse submenu submenu-1" data-bs-parent="#menu-accordion">
+								<ul class="submenu-list list-unstyled">
+									<li class="submenu-item"><a class="submenu-link" href="">Fill Manager</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">SFill Status</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Geotab Telematics</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Fleet List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Equipment List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Vehicle Report History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Admin </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Submit a Fill</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Fill Heat Map</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">App Status </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Truck Activity History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Report </a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Ticket Manager </a></li>
+								</ul>
+							</div>
+						</li><!--//nav-item-->
+						<li class="nav-item has-submenu">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
+								data-bs-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
+								<span class="nav-icon">
+									<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+									<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M6.16634 1.91699H3.66634C3.43622 1.91699 3.24967 2.10354 3.24967 2.33366V3.16699H6.58301V2.33366C6.58301 2.10354 6.39646 1.91699 6.16634 1.91699ZM1.99967 2.33366V3.30925C1.02868 3.65244 0.333008 4.57848 0.333008 5.66699V14.8337C0.333008 16.2144 1.4523 17.3337 2.83301 17.3337H10.333C11.7137 17.3337 12.833 16.2144 12.833 14.8337V8.36919C12.833 7.94742 12.7264 7.53663 12.5282 7.17284L13.4529 6.24809C14.1038 5.59721 14.1038 4.54194 13.4529 3.89106L12.2132 2.65132C11.5623 2.00045 10.507 2.00045 9.85617 2.65132L8.95869 3.54879C8.62035 3.3367 8.23444 3.20774 7.83301 3.17518V2.33366C7.83301 1.41318 7.08682 0.666992 6.16634 0.666992H3.66634C2.74587 0.666992 1.99967 1.41318 1.99967 2.33366ZM1.99967 5.66699C1.99967 5.20676 2.37277 4.83366 2.83301 4.83366H7.63081C7.85182 4.83366 8.06378 4.92146 8.22006 5.07774L10.9223 7.77994C11.0785 7.93622 11.1663 8.14818 11.1663 8.36919V14.8337C11.1663 15.2939 10.7932 15.667 10.333 15.667H2.83301C2.37277 15.667 1.99967 15.2939 1.99967 14.8337V5.66699ZM11.3293 3.53521L12.569 4.77495C12.7318 4.93767 12.7318 5.20149 12.569 5.3642L11.7163 6.21695L9.8873 4.38795L10.74 3.53521C10.9028 3.37249 11.1666 3.37249 11.3293 3.53521ZM7.83972 11.7403C7.83972 12.1719 7.40722 12.7403 6.58972 12.7403C5.77223 12.7403 5.33972 12.1719 5.33972 11.7403C5.33972 11.3419 5.58016 10.6271 6.03578 9.74178C6.18983 9.44243 6.35514 9.1484 6.51876 8.87263C6.55078 8.81865 6.62866 8.81865 6.66069 8.87263C6.8243 9.1484 6.98961 9.44243 7.14367 9.74178C7.59929 10.6271 7.83972 11.3419 7.83972 11.7403ZM9.08972 11.7403C9.08972 12.9829 7.97043 13.9903 6.58972 13.9903C5.20901 13.9903 4.08972 12.9829 4.08972 11.7403C4.08972 10.2878 5.58987 7.93531 6.26603 6.94872C6.42424 6.71789 6.75521 6.71789 6.91341 6.94872C7.58957 7.93531 9.08972 10.2878 9.08972 11.7403Z" fill="#404040"/>
+										</svg>
+										
+								</span>
+								<span class="nav-link-text">Fill Admin</span>
+								<span class="submenu-arrow">
+									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.880956 0.635711C1.04355 0.473118 1.30712 0.472974 1.46989 0.63539L5.00026 4.15807L8.53063 0.635389C8.69341 0.472974 8.95698 0.473118 9.11957 0.635711L9.70564 1.22178C9.86835 1.38449 9.86835 1.64831 9.70563 1.81103L5.29489 6.22178C5.13217 6.38449 4.86835 6.38449 4.70564 6.22178L0.29489 1.81103C0.132172 1.64831 0.132172 1.38449 0.29489 1.22178L0.880956 0.635711Z" fill="#404040"/>
+										</svg>
+										
+									<!-- <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-down"
+										fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd"
+											d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+									</svg> -->
+								</span><!--//submenu-arrow-->
+							</a><!--//nav-link-->
+							<div id="submenu-2" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
+								<ul class="submenu-list list-unstyled">
+									<li class="submenu-item"><a class="submenu-link" href="">Fill Manager</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">SFill Status</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Geotab Telematics</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Fleet List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Equipment List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Vehicle Report History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Admin </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Submit a Fill</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Fill Heat Map</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">App Status </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Truck Activity History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Report </a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Ticket Manager </a></li>
+								</ul>
+							</div>
+						</li><!--//nav-item-->
+
+						<li class="nav-item has-submenu">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link submenu-toggle" href="#" data-bs-toggle="collapse"
+								data-bs-target="#submenu-3" aria-expanded="false" aria-controls="submenu-2">
+								<span class="nav-icon">
+									<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+									<svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M11.9997 14.8337C11.9997 15.2939 11.6266 15.667 11.1663 15.667H2.83301C2.37277 15.667 1.99967 15.2939 1.99967 14.8337V3.16699C1.99967 2.70676 2.37277 2.33366 2.83301 2.33366H6.99967V6.50033C6.99967 6.96056 7.37277 7.33366 7.83301 7.33366H11.9997V14.8337ZM11.726 5.66699L8.66634 2.60735V5.66699H11.726ZM0.333008 3.16699C0.333008 1.78628 1.4523 0.666992 2.83301 0.666992H8.39265C8.83468 0.666992 9.2586 0.842587 9.57116 1.15515L13.1782 4.76217C13.4907 5.07473 13.6663 5.49865 13.6663 5.94068V14.8337C13.6663 16.2144 12.5471 17.3337 11.1663 17.3337H2.83301C1.4523 17.3337 0.333008 16.2144 0.333008 14.8337V3.16699ZM4.08301 12.2968C3.85289 12.2968 3.66634 12.4834 3.66634 12.7135V13.5468C3.66634 13.777 3.85289 13.9635 4.08301 13.9635H8.24967C8.47979 13.9635 8.66634 13.777 8.66634 13.5468V12.7135C8.66634 12.4834 8.47979 12.2968 8.24967 12.2968H4.08301ZM3.66634 9.41699C3.66634 9.18687 3.85289 9.00033 4.08301 9.00033H9.91634C10.1465 9.00033 10.333 9.18687 10.333 9.41699V10.2503C10.333 10.4804 10.1465 10.667 9.91634 10.667H4.08301C3.85289 10.667 3.66634 10.4804 3.66634 10.2503V9.41699Z" fill="#404040"/>
+										</svg>
+										
+										
+								</span>
+								<span class="nav-link-text">Billing</span>
+								<span class="submenu-arrow">
+									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.880956 0.635711C1.04355 0.473118 1.30712 0.472974 1.46989 0.63539L5.00026 4.15807L8.53063 0.635389C8.69341 0.472974 8.95698 0.473118 9.11957 0.635711L9.70564 1.22178C9.86835 1.38449 9.86835 1.64831 9.70563 1.81103L5.29489 6.22178C5.13217 6.38449 4.86835 6.38449 4.70564 6.22178L0.29489 1.81103C0.132172 1.64831 0.132172 1.38449 0.29489 1.22178L0.880956 0.635711Z" fill="#404040"/>
+										</svg>
+								</span><!--//submenu-arrow-->
+							</a><!--//nav-link-->
+							<div id="submenu-3" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
+								<ul class="submenu-list list-unstyled">
+									<li class="submenu-item"><a class="submenu-link" href="">Fill Manager</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">SFill Status</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Geotab Telematics</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Fleet List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Equipment List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Vehicle Report History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Admin </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Submit a Fill</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Fill Heat Map</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">App Status </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Truck Activity History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Report </a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Ticket Manager </a></li>
+								</ul>
+							</div>
+						</li><!--//nav-item-->
+
+						<li class="nav-item has-submenu ">
+							<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+							<a class="nav-link submenu-toggle bottomline" href="#" data-bs-toggle="collapse"
+								data-bs-target="#submenu-4" aria-expanded="false" aria-controls="submenu-2">
+								<span class="nav-icon">
+									<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M10.0003 6.66634C10.0003 7.59031 9.25763 8.33301 8.33366 8.33301C7.40969 8.33301 6.66699 7.59031 6.66699 6.66634C6.66699 5.74237 7.40969 4.99967 8.33366 4.99967C9.25763 4.99967 10.0003 5.74237 10.0003 6.66634ZM11.667 6.66634C11.667 8.51079 10.1781 9.99967 8.33366 9.99967C6.48921 9.99967 5.00033 8.51079 5.00033 6.66634C5.00033 4.8219 6.48921 3.33301 8.33366 3.33301C10.1781 3.33301 11.667 4.8219 11.667 6.66634ZM3.33366 14.8167C3.33366 14.3132 3.75706 13.735 4.83125 13.2348C5.63988 12.8583 6.64617 12.6169 7.59935 12.5329C7.65512 12.4631 7.73872 12.414 7.83098 12.3952C8.45058 12.2686 9.00022 11.8508 9.26909 11.2259C9.31679 11.115 9.35367 11.0022 9.38021 10.8887C9.02279 10.8516 8.67116 10.833 8.33366 10.833C6.97987 10.833 5.39876 11.1321 4.12773 11.7239C2.91026 12.2908 1.66699 13.2878 1.66699 14.8167V16.6663H9.08657C9.25102 16.0858 9.13961 15.4771 8.81577 14.9997H3.33366V14.8167ZM16.4039 16.5643C15.7699 16.2916 15.0349 16.5844 14.7621 17.2184C14.7472 17.253 14.734 17.288 14.7224 17.3231C14.6945 17.4081 14.6244 17.476 14.5353 17.484C14.283 17.5067 14.0273 17.5064 13.7712 17.482C13.6727 17.4726 13.5995 17.391 13.5797 17.294C13.5006 16.9068 13.2395 16.5633 12.8489 16.3953C12.4583 16.2272 12.0293 16.2738 11.6938 16.4827C11.6097 16.5349 11.5002 16.5379 11.4256 16.4729C11.2318 16.3038 11.0557 16.1183 10.8987 15.9195C10.8432 15.8493 10.8444 15.7517 10.8869 15.673C10.9044 15.6404 10.9207 15.6068 10.9356 15.5721C11.2084 14.9381 10.9155 14.2031 10.2816 13.9303C10.2469 13.9154 10.212 13.9022 10.1768 13.8906C10.0918 13.8626 10.0239 13.7926 10.0159 13.7034C9.9932 13.4512 9.99346 13.1954 10.0179 12.9394C10.0273 12.8409 10.1089 12.7677 10.2059 12.7479C10.5931 12.6688 10.9366 12.4076 11.1047 12.0171C11.2727 11.6264 11.2261 11.1975 11.0173 10.8619C10.965 10.7779 10.962 10.6683 11.027 10.5937C11.1961 10.3999 11.3816 10.2239 11.5804 10.0669C11.6506 10.0114 11.7482 10.0125 11.8269 10.055C11.8595 10.0726 11.8932 10.0889 11.9278 10.1038C12.5618 10.3766 13.2969 10.0837 13.5696 9.44974C13.5846 9.41508 13.5978 9.38012 13.6093 9.34495C13.6373 9.25991 13.7074 9.19204 13.7965 9.18402C14.0488 9.16135 14.3045 9.16161 14.5606 9.18604C14.6591 9.19543 14.7323 9.27708 14.7521 9.37403C14.8312 9.76129 15.0923 10.1048 15.4829 10.2729C15.8735 10.4409 16.3025 10.3943 16.638 10.1854C16.7221 10.1332 16.8316 10.1301 16.9062 10.1952C17.1 10.3643 17.2761 10.5498 17.4331 10.7486C17.4885 10.8188 17.4874 10.9164 17.4449 10.9951C17.4273 11.0277 17.411 11.0614 17.3961 11.096C17.1234 11.73 17.4162 12.4651 18.0502 12.7378C18.0849 12.7527 18.1198 12.766 18.155 12.7775C18.24 12.8055 18.3079 12.8755 18.3159 12.9647C18.3386 13.217 18.3383 13.4727 18.3139 13.7288C18.3045 13.8273 18.2228 13.9005 18.1259 13.9203C17.7386 13.9994 17.3951 14.2605 17.2271 14.6511C17.0591 15.0417 17.1057 15.4706 17.3145 15.8062C17.3668 15.8902 17.3698 15.9998 17.3047 16.0743C17.1356 16.2682 16.9501 16.4442 16.7513 16.6012C16.6811 16.6567 16.5835 16.6556 16.5048 16.6131C16.4722 16.5955 16.4386 16.5792 16.4039 16.5643ZM12.6353 12.6756C12.999 11.8302 13.9791 11.4398 14.8244 11.8035C15.6697 12.1672 16.0602 13.1473 15.6965 13.9926C15.3328 14.8379 14.3527 15.2284 13.5074 14.8647C12.6621 14.501 12.2716 13.5209 12.6353 12.6756Z" fill="#404040"/>
+										</svg>
+										
+										
+										
+								</span>
+								<span class="nav-link-text">Admin</span>
+								<span class="submenu-arrow">
+									<svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M0.880956 0.635711C1.04355 0.473118 1.30712 0.472974 1.46989 0.63539L5.00026 4.15807L8.53063 0.635389C8.69341 0.472974 8.95698 0.473118 9.11957 0.635711L9.70564 1.22178C9.86835 1.38449 9.86835 1.64831 9.70563 1.81103L5.29489 6.22178C5.13217 6.38449 4.86835 6.38449 4.70564 6.22178L0.29489 1.81103C0.132172 1.64831 0.132172 1.38449 0.29489 1.22178L0.880956 0.635711Z" fill="#404040"/>
+										</svg>
+								</span><!--//submenu-arrow-->
+							</a><!--//nav-link-->
+							<div id="submenu-4" class="collapse submenu submenu-2" data-bs-parent="#menu-accordion">
+								<ul class="submenu-list list-unstyled">
+									<li class="submenu-item"><a class="submenu-link" href="">Fill Manager</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">SFill Status</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Geotab Telematics</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Fleet List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Equipment List</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Vehicle Report History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Admin </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Submit a Fill</a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Fill Heat Map</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">App Status </a></li>
+									<li class="submenu-item"><a class="submenu-link" href=""> Truck Activity History</a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Driver Report </a></li>
+									<li class="submenu-item"><a class="submenu-link" href="">Ticket Manager </a></li>
+								</ul>
+							</div>
+						</li><!--//nav-item-->
+					</ul><!--//app-menu-->
+				</nav><!--//app-nav-->
+				<div class="app-sidepanel-footer">
+					<nav class="app-nav app-nav-footer">
+						<ul class="app-menu footer-menu list-unstyled">
+							<li class="nav-item bottomline">
+								<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+								<a class="nav-link" href="#">
+									<span class="nav-icon">
+										<svg width="14" height="17" viewBox="0 0 14 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12.2493 7.93326C12.2493 5.95793 11.6768 3.60881 9.60571 2.48308C9.32449 1.28557 8.26926 0.395508 7.01049 0.395508C5.75174 0.395508 4.69653 1.28553 4.41529 2.48299C2.34412 3.60869 1.77158 5.95786 1.77158 7.93326V9.41447L0.98052 10.2224C0.572804 10.6388 0.34375 11.2035 0.34375 11.7924C0.34375 13.0187 1.31711 14.0128 2.51782 14.0128H4.05994C4.16516 14.6289 4.45377 15.202 4.89266 15.6502C5.45435 16.2238 6.21616 16.5461 7.01051 16.5461C7.80485 16.5461 8.56666 16.2238 9.12835 15.6502C9.56724 15.202 9.85585 14.6289 9.96107 14.0128H11.503C12.7037 14.0128 13.6771 13.0187 13.6771 11.7924C13.6771 11.2035 13.448 10.6388 13.0403 10.2224L12.2493 9.41447V7.93326ZM8.23241 14.0128H5.7886C5.85453 14.1727 5.95055 14.3197 6.073 14.4447C6.32164 14.6987 6.65887 14.8413 7.01051 14.8413C7.36214 14.8413 7.69937 14.6987 7.94801 14.4447C8.07046 14.3197 8.16648 14.1727 8.23241 14.0128ZM3.44083 9.76755C3.44083 9.99362 3.3529 10.2104 3.19638 10.3703L2.16086 11.4279C2.06619 11.5245 2.013 11.6557 2.013 11.7924C2.013 12.0772 2.23901 12.308 2.51782 12.308H11.503C11.7818 12.308 12.0078 12.0772 12.0078 11.7924C12.0078 11.6557 11.9546 11.5245 11.86 11.4279L10.8245 10.3703C10.6679 10.2104 10.58 9.99362 10.58 9.76755V7.93326C10.58 5.98878 9.97109 4.3406 8.32664 3.77126C8.14376 3.70794 8.00997 3.53918 8.00997 3.34196V3.12107C8.00997 2.55732 7.56248 2.10031 7.01049 2.10031C6.45849 2.10031 6.011 2.55732 6.011 3.12107V3.34192C6.011 3.53914 5.87721 3.7079 5.69432 3.77122C4.0498 4.34052 3.44083 5.98873 3.44083 7.93326V9.76755Z" fill="#404040"/>
+											</svg>
+											
+									</span>
+									<span class="nav-link-text ">Notifications</span>
+								</a><!--//nav-link-->
+							</li><!--//nav-item-->
+							<li class="nav-item bottomline">
+								<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+								<a class="nav-link"
+									href="">
+									<span class="nav-icon">
+										<img  style="margin-left: -10px;margin-top: 5px;" src="./assets/images/logo/jd.svg"/> 
+									</span>
+									<span class="nav-link-text textbold">John Doe</span><br>
+									<span class="nav-link-text textsemibold">john.doe@shell.com</span>
+
+								</a><!--//nav-link-->
+							</li><!--//nav-item-->
+							<li class="nav-item">
+								<!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
+								<a class="nav-link"
+									href="">
+									<span class="nav-icon">
+										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M8.75195 2.50195C8.98207 2.50195 9.16862 2.6885 9.16862 2.91862V3.75195C9.16862 3.98207 8.98207 4.16862 8.75195 4.16862H5.00195C4.54172 4.16862 4.16862 4.54172 4.16862 5.00195L4.16862 15.002C4.16862 15.4622 4.54172 15.8353 5.00195 15.8353H8.75195C8.98207 15.8353 9.16862 16.0218 9.16862 16.252V17.0853C9.16862 17.3154 8.98207 17.502 8.75195 17.502H5.00195C3.62124 17.502 2.50195 16.3827 2.50195 15.002L2.50195 5.00195C2.50195 3.62124 3.62124 2.50195 5.00195 2.50195L8.75195 2.50195ZM17.3762 10.2966C17.5389 10.1339 17.5389 9.87004 17.3762 9.70732L14.0429 6.37399C13.8802 6.21127 13.6163 6.21127 13.4536 6.37399L12.8644 6.96325C12.7017 7.12597 12.7017 7.38978 12.8644 7.5525L14.4805 9.16862L6.909 9.16862C6.67888 9.16862 6.49233 9.35517 6.49233 9.58529V10.4186C6.49233 10.6487 6.67888 10.8353 6.909 10.8353H14.4805L12.8644 12.4514C12.7017 12.6141 12.7017 12.8779 12.8644 13.0407L13.4536 13.6299C13.6163 13.7926 13.8802 13.7926 14.0429 13.6299L17.3762 10.2966Z" fill="#404040"/>
+											</svg>
+											
+									</span>
+									<span class="nav-link-text">Logout</span>
+								</a><!--//nav-link-->
+							</li><!--//nav-item-->
+						</ul><!--//footer-menu-->
+					</nav>
+				</div><!--//app-sidepanel-footer-->
+
+			</div><!--//sidepanel-inner-->
+		</div><!--//app-sidepanel-->
+	</header><!--//app-header-->
+
+	<div class="app-wrapper">
+		<div class="app-content pt-0 p-md-3 p-lg-0">
+			<div class="row g-4 mb-4" style="border-radius: none !important;">
+				<div class="col-12 col-lg-12" >
+					<div class="app-card app-card-chart h-100 shadow-sm">
+						<div class="app-card-header p-3 hidden" >
+							<div class="row justify-content-between align-items-center">
+								<div class="col-auto">
+									<h4 class="app-card-title">Fill Manager</h4>
+								</div><!--//col-->
+								<div class="col-auto">
+									<div class="card-header-action">
+										<input type=button name=type id='bt1' value='' onclick="setVisibility('sub3');"/> 
+										<a href="">
+											
+											
+											</a>
+									</div><!--//card-header-actions-->
+								</div><!--//col-->
+							</div><!--//row-->
+						</div><!--//app-card-header-->
+						<div class="app-card-body layerout p-3 p-lg-4"id="sub3" >
+							<div class="mb-3 d-flex">
+								<div id="contentbody">
+									<div class="fileinput">
+										<div class="box cname" >
+											<label >Customer Name</label>
+											<br>
+											
+											<select class="custom-select">
+											  <!-- <option value="">All customers </option> -->
+											  <span style="border: 1px solid red;"><option value="1">Amazon Logistics DAU1 CL</option></span>
+											 
+											</select>
+						
+						
+										</div>
+										<div class="box" >
+											<label class="text2">Vehicle/Equipment</label>
+											<br>
+											
+											<select class="custom-select2">
+											  <option value="">All customers </option>
+											  <option value="1">Amazon Logistics DAU1 CL</option>
+											 
+											</select>
+										</div>
+										<div class="box" >
+											<label>Date Range</label>
+											<br>
+											<input class="custom-select3" type="date" placeholder="23 Nov 2022 -> 25 Nov 2022">
+											
+										</div>
+										<div class="box" >
+											<button class="button"> Search</button>
+											
+										</div>
+										  
+						
+									</div>
+								</div>
+							</div>
+							
+						</div><!--//app-card-body-->
+					</div><!--//app-card-->
+				</div><!--//col-->
+				
+
+			</div><!--//row-->
+		</div>
+
+		<div class="app-content pt-3 p-md-3 p-lg-4">
+			<div class="container-xl">
+
+			
+				
+				<div class="row g-4 mb-4">
+					
+						
+					<div class="col-12 col-lg-12">
+						<div class="app-card app-card-stats-table h-100 shadow-sm">
+							<div class="app-card-header p-3">
+								<div class="row justify-content-between align-items-center">
+									<div class="col-auto">
+										<h4 class="app-card-title">Results</h4>
+									</div><!--//col-->
+									<div class="col-auto">
+										<div class="card-header-action">
+											<a class="btn app-btn-primary"
+										href=""><svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top: -5px;">
+											<path  fill-rule="evenodd" clip-rule="evenodd" d="M8.37531 1.22233V7.34498L6.39212 5.60968C6.21893 5.45815 5.9557 5.4757 5.80417 5.64888L5.52979 5.96245C5.37825 6.13563 5.3958 6.39887 5.56899 6.5504L8.72593 9.31273C8.88303 9.45019 9.11759 9.45019 9.27469 9.31273L12.4316 6.5504C12.6048 6.39887 12.6224 6.13563 12.4708 5.96245L12.1965 5.64888C12.0449 5.4757 11.7817 5.45815 11.6085 5.60968L9.62531 7.34498V1.22233C9.62531 0.992212 9.43876 0.805664 9.20864 0.805664H8.79198C8.56186 0.805664 8.37531 0.992212 8.37531 1.22233ZM6.91699 3.16681H4.81548C3.81541 3.16681 2.91157 3.7628 2.51762 4.68201L0.86913 8.52849C0.735762 8.83968 0.666992 9.17472 0.666992 9.51329V14.0001C0.666992 15.3809 1.78628 16.5001 3.16699 16.5001H14.8337C16.2144 16.5001 17.3337 15.3809 17.3337 14.0001V9.51329C17.3337 9.17472 17.2649 8.83968 17.1315 8.52849L15.483 4.68201C15.0891 3.7628 14.1852 3.16681 13.1852 3.16681H11.0837C10.8535 3.16681 10.667 3.35336 10.667 3.58348V4.41681C10.667 4.64693 10.8535 4.83348 11.0837 4.83348H13.1852C13.5185 4.83348 13.8198 5.03214 13.9511 5.33854L15.5204 9.00014H11.0837C10.8535 9.00014 10.667 9.18669 10.667 9.41681V9.83348C10.667 10.4407 10.4476 10.8348 10.1654 11.0856C9.86796 11.3501 9.44777 11.5001 9.00033 11.5001C8.55289 11.5001 8.13269 11.3501 7.83521 11.0856C7.55307 10.8348 7.33366 10.4407 7.33366 9.83348V9.41681C7.33366 9.18669 7.14711 9.00014 6.91699 9.00014H2.48027L4.04953 5.33854C4.18084 5.03214 4.48213 4.83348 4.81548 4.83348H6.91699C7.14711 4.83348 7.33366 4.64693 7.33366 4.41681V3.58348C7.33366 3.35336 7.14711 3.16681 6.91699 3.16681Z" fill="#404040"/>
+											</svg>
+											 Download</a>
+											
+										</div><!--//card-header-actions-->
+									</div><!--//col-->
+								</div><!--//row-->
+							</div><!--//app-card-header-->
+							<div class="app-card-body p-3 p-lg-0">
+								<div class="table-responsive">
+									<table class="table table-border mb-0" id="customers">
+									
+											<tr>
+												<th>Customer</th>
+												<th>Vehicle/Equipment</th>
+												<th>13 Dec 2022</th>
+												<th>12 Dec 2022</th>
+												<th>11 Dec 2022</th>
+												<th>10 Dec 2022</th>
+												<th>9 Dec 2022</th>
+												<th>9 Dec 2022</th>
+												<th>9 Dec 2022</th>
+											</tr>
+											<!-- start -->
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="red">7.9 - Filled</td>
+												<td class="red">0.0 - Full</td>
+												<td class="red">0.0 - Locked Fuel
+													Door</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+											</tr>
+						
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="green">6.2 - Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+						
+											</tr>
+											<!-- end -->
+											<!-- start -->
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="red">7.9 - Filled</td>
+												<td class="red">0.0 - Full</td>
+												<td class="red">0.0 - Locked Fuel
+													Door</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+											</tr>
+						
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="green">6.2 - Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+						
+											</tr>
+											<!-- end -->
+											<!-- start -->
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="red">7.9 - Filled</td>
+												<td class="red">0.0 - Full</td>
+												<td class="red">0.0 - Locked Fuel
+													Door</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+											</tr>
+						
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="green">6.2 - Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+						
+											</tr>
+											<!-- end -->
+											<!-- start -->
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="red">7.9 - Filled</td>
+												<td class="red">0.0 - Full</td>
+												<td class="red">0.0 - Locked Fuel
+													Door</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+											</tr>
+						
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="green">6.2 - Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+						
+											</tr>
+											<!-- end -->
+											<!-- start -->
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="red">7.9 - Filled</td>
+												<td class="red">0.0 - Full</td>
+												<td class="red">0.0 - Locked Fuel
+													Door</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+											</tr>
+						
+											<tr>
+												<td>Amazon Logistics DAU1 CL</td>
+												<td>WD3PE7CD5jp622331
+													(Vehicle)</td>
+												<td class="green">6.2 - Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+												<td>Not Filled</td>
+						
+											</tr>
+											<!-- end -->
+						
+						
+										</table>
+								</div><!--//table-responsive-->
+							</div><!--//app-card-body-->
+						</div><!--//app-card-->
+					</div><!--//col-->
+				</div><!--//row-->
+				<div class="row g-4 mb-4">
+					<div class="col-12 col-lg-2">
+						Total 500 results
+					</div><!--//col-->
+					<div class="col-12 col-lg-4">
+						<nav aria-label="Page navigation example">
+							<ul class="pagination" style="background: none;" >
+							  <li class="page-item" >
+								<a class="page-link" href="#" aria-label="Previous">
+								  <span aria-hidden="true"><svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M7.30247 0.433542C7.13975 0.270824 6.87593 0.270822 6.71321 0.433542L0.441374 6.70538C0.278656 6.8681 0.278656 7.13192 0.441375 7.29463L6.71321 13.5664C6.87593 13.7292 7.13975 13.7292 7.30247 13.5664L7.89161 12.9773C8.05437 12.8145 8.05432 12.5506 7.8915 12.3879L2.49937 7.00001L7.89149 1.61205C8.05432 1.44935 8.05437 1.18545 7.89161 1.02268L7.30247 0.433542Z" fill="#D9D9D9"/>
+									</svg>
+									</span>
+								</a>
+							  </li>
+							  <li class="page-item"><a class="page-link" href="#">1</a></li>
+							  <li class="page-item"><a class="page-link" href="#">2</a></li>
+							  <li class="page-item"><a class="page-link" href="#">3</a></li>
+							  <li class="page-item"><a class="page-link" href="#">4</a></li>
+							  <li class="page-item"><a class="page-link" href="#">5</a></li>
+							  <li class="page-item"><a class="page-link" href="#">...</a></li>
+
+							  <li class="page-item">
+								<a class="page-link" href="#" aria-label="Next">
+								  <span aria-hidden="true"><svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1.69753 13.5665C1.86025 13.7292 2.12407 13.7292 2.28679 13.5665L8.55862 7.29462C8.72134 7.1319 8.72134 6.86808 8.55862 6.70537L2.28679 0.433562C2.12407 0.270844 1.86025 0.270843 1.69753 0.433562L1.10839 1.0227C0.945628 1.18547 0.945679 1.44937 1.1085 1.61207L6.50062 6.99999L1.10851 12.3879C0.94568 12.5506 0.945628 12.8146 1.10839 12.9773L1.69753 13.5665Z" fill="#404040"/>
+									</svg>
+									</span>
+								</a>
+							  </li>
+							</ul>
+						  </nav>
+					</div><!--//col-->
+					<div class="col-12 col-lg-4">
+						
+					</div><!--//col-->
+				</div><!--//row-->
+
+			</div><!--//container-fluid-->
+		</div><!--//app-content-->
+
+		
+
+	</div><!--//app-wrapper-->
+
+
+	<!-- Javascript -->
+	<script src="assets/plugins/popper.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+	<!-- Page Specific JS -->
+	<script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
